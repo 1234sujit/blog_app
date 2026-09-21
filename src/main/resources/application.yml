@@ -21,6 +21,20 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
 
 
+security:
+  jwt:
+    secret: 24tqfweqhfofjwfjhwfwoijdfqwbdpojfwfbhwfnwjhfdbijoqwhoqfbqifhqagrasgasgafasgadfweatesbsadgsdhbsagshag
+    access-token-expire-time: 600000
+    refresh-token-expire-time: 3600000
+    issuer: substring-blog-app
+
+#Dialect
+#driver classname
+
+logging:
+  level:
+    com.blog_app: DEBUG
+    org.springframework.security: DEBUG
 #Dialect
 #driver classname
 

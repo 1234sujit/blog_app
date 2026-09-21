@@ -32,6 +32,14 @@ public class UserServiceImpl implements UserService {
         return modelMapper.map(savedUser, UserDto.class);
     }
 
+    @Override
+    public void delete(Long userId) {
+        var article = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User Not Found"));
+
+        userRepository.delete(article);
+
+    }
+
     private void validateUser(User user) {
         User user1 = userRepository.findByEmail(user.getEmail()).orElse(null);
         if (user1 != null) {
